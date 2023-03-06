@@ -3,7 +3,6 @@ import { useState } from "react";
 import {nanoid} from 'nanoid';
 import React from "react";
 import NotesList from "./components/NotesList";
-import AddNote from "./components/AddNote";
 
 const App = ()=>{
   const [notes,setNOtes]=useState([{
@@ -27,10 +26,20 @@ const App = ()=>{
     date :"15/04/2021"
   }
 ]);
+    const addNote = (text)=>{
+      const date =new Date();
+      const newNote={
+        id:nanoid(),
+        text:text,
+        date:date.toLocaleDateString(),
+      }
+      const newNotes = [...notes,newNote];
+      setNOtes(newNotes);
+    }
   return (
     <>
    <div className="container">
-    <NotesList notes={notes}/>
+    <NotesList notes={notes} handleAddNote={addNote}/>
   
     </div>
     </>

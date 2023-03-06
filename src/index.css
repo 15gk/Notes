@@ -42,7 +42,10 @@ textarea:focus{
   border-radius: 15px;
   padding: 5px 10px 5px 10px;
 }
-
+.save:hover{
+  background-color: #ededed;
+  cursor: pointer;
+}
 .note{
   background-color: #fef68a;
   /* margin-bottom: 10px; */
